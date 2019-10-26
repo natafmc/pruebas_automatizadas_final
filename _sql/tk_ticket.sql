@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 24, 2019 at 11:01 AM
+-- Generation Time: Oct 26, 2019 at 06:20 PM
 -- Server version: 10.3.16-MariaDB
 -- PHP Version: 7.3.7
 
@@ -205,7 +205,8 @@ INSERT INTO `tk_categoria_zona_bitacora` (`ID_CATEGORIA_ZONA`, `ID_CAT_ZONA_BITA
 (5, 6, '2018-09-17', '22:10:51', NULL, '0000-00-00 00:00:00', 3, 'P-EM'),
 (4, 7, '2018-09-17', '22:18:18', NULL, '0000-00-00 00:00:00', 1, 'SRV-EM'),
 (2, 8, '2018-09-17', '22:18:31', NULL, '0000-00-00 00:00:00', 2, 'OC-TE'),
-(3, 9, '2018-09-17', '22:18:33', NULL, '0000-00-00 00:00:00', 2, 'OC-N1');
+(3, 9, '2018-09-17', '22:18:33', NULL, '0000-00-00 00:00:00', 2, 'OC-N1'),
+(1, 10, '2019-10-26', '17:53:00', NULL, '0000-00-00 00:00:00', 7, 'CJ-N1');
 
 -- --------------------------------------------------------
 
@@ -271,9 +272,9 @@ CREATE TABLE `tk_persona` (
 --
 
 INSERT INTO `tk_persona` (`ID_PERSONA`, `ID_USUARIO`, `NOMBRE`, `APELLIDOS`, `FECHA_NAC`, `ESTADO`, `FECHA_MOD`, `USUARIO_MOD`, `FECHA_REG`, `USUARIO_REG`) VALUES
-(1, NULL, 'Denis', 'Rodriguez Mendoza', '2018-09-01', 'activo', '2018-09-14 19:25:14', 0, '0000-00-00 00:00:00', 0),
+(1, NULL, 'Romina', 'Medrano Cambara', '2018-09-01', 'activo', '2019-10-26 16:19:31', 0, '0000-00-00 00:00:00', 0),
 (2, NULL, 'Nata', 'Medrano', '2018-09-01', 'activo', '2018-09-15 01:25:45', 1, '0000-00-00 00:00:00', 0),
-(3, NULL, 'Lola', 'Meras', '2018-09-05', 'activo', '2018-09-14 20:05:37', 0, '0000-00-00 00:00:00', 0);
+(3, NULL, 'Lola', 'La Trailera', '2018-09-05', 'activo', '2019-10-26 16:19:45', 0, '0000-00-00 00:00:00', 0);
 
 -- --------------------------------------------------------
 
@@ -366,7 +367,14 @@ INSERT INTO `tk_ticket` (`ID_TICKET`, `ID_CATEGORIA`, `ID_ZONA`, `NUMERO`, `CODI
 (20, 2, 1, '4', 'CJ-N1-4', 1, '...', 0, 0, NULL, NULL, '1', '2018-09-17 20:18:43', '2018-09-17 04:00:00', '22:18:43', '2018-09-17'),
 (21, 6, 2, '3', 'P-EM-3', 2, '...', 0, 0, NULL, NULL, '1', '2018-09-17 20:18:47', '2018-09-17 04:00:00', '22:18:47', '2018-09-17'),
 (22, 2, 4, '2', 'OC-N1-2', 1, '...', 0, 0, NULL, NULL, '1', '2018-09-17 20:19:30', '2018-09-17 04:00:00', '22:19:30', '2018-09-17'),
-(23, 4, 4, '2', 'OC-TE-2', 3, '...', 0, 0, NULL, NULL, '1', '2018-09-17 20:19:33', '2018-09-17 04:00:00', '22:19:33', '2018-09-17');
+(23, 4, 4, '2', 'OC-TE-2', 3, '...', 0, 0, NULL, NULL, '1', '2018-09-17 20:19:33', '2018-09-17 04:00:00', '22:19:33', '2018-09-17'),
+(24, 2, 1, '1', 'CJ-N1-1', 1, '...', 0, 0, NULL, NULL, '1', '2019-10-26 15:53:00', '2019-10-26 04:00:00', '17:53:00', '2019-10-26'),
+(25, 2, 1, '2', 'CJ-N1-2', 1, '...', 0, 0, NULL, NULL, '1', '2019-10-26 16:02:40', '2019-10-26 04:00:00', '18:02:40', '2019-10-26'),
+(26, 2, 1, '3', 'CJ-N1-3', 1, '...', 0, 0, NULL, NULL, '1', '2019-10-26 16:07:05', '2019-10-26 04:00:00', '18:07:05', '2019-10-26'),
+(27, 2, 1, '4', 'CJ-N1-4', 1, '...', 0, 0, NULL, NULL, '1', '2019-10-26 16:08:00', '2019-10-26 04:00:00', '18:08:00', '2019-10-26'),
+(28, 2, 1, '5', 'CJ-N1-5', 1, '...', 0, 0, NULL, NULL, '1', '2019-10-26 16:09:18', '2019-10-26 04:00:00', '18:09:18', '2019-10-26'),
+(29, 2, 1, '6', 'CJ-N1-6', 1, '...', 0, 0, NULL, NULL, '1', '2019-10-26 16:12:06', '2019-10-26 04:00:00', '18:12:06', '2019-10-26'),
+(30, 2, 1, '7', 'CJ-N1-7', 1, '...', 0, 0, NULL, NULL, '1', '2019-10-26 16:18:47', '2019-10-26 04:00:00', '18:18:47', '2019-10-26');
 
 -- --------------------------------------------------------
 
@@ -393,9 +401,9 @@ CREATE TABLE `tk_usuario` (
 --
 
 INSERT INTO `tk_usuario` (`ID_USUARIO`, `ID_PERSONA`, `NOMBRE_USUARIO`, `PASSWORD`, `ESTADO`, `USUARIO_REG`, `FECHA_REG`, `USUARIO_MOD`, `FECHA_MOD`, `ESTADO_REG`, `FECHA_EXPIRACION`) VALUES
-(1, 1, 'denis.rodriguez', 'denis.rodriguez', 'activo', NULL, '2018-09-12 21:50:29', NULL, '0000-00-00 00:00:00', NULL, '2018-09-30'),
+(1, 1, 'romina.medrano', 'romina.medrano', 'activo', NULL, '2019-10-26 15:03:42', NULL, '0000-00-00 00:00:00', NULL, '2018-09-30'),
 (2, 2, 'nata.medrano', 'nata.medrano', 'activo', NULL, '2018-09-14 19:34:00', NULL, '0000-00-00 00:00:00', NULL, '2018-09-30'),
-(3, 3, 'lola.meras', 'lola.meras', 'activo', NULL, '2018-09-14 20:07:28', NULL, '0000-00-00 00:00:00', NULL, '2018-09-30');
+(3, 3, 'lola.latra', 'lola.latra', 'activo', NULL, '2019-10-26 16:20:02', NULL, '0000-00-00 00:00:00', NULL, '2018-09-30');
 
 -- --------------------------------------------------------
 
@@ -625,7 +633,7 @@ ALTER TABLE `tk_categoria_zona`
 -- AUTO_INCREMENT for table `tk_categoria_zona_bitacora`
 --
 ALTER TABLE `tk_categoria_zona_bitacora`
-  MODIFY `ID_CAT_ZONA_BITACORA` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `ID_CAT_ZONA_BITACORA` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `tk_estacion`
@@ -655,7 +663,7 @@ ALTER TABLE `tk_solicitud_ticket`
 -- AUTO_INCREMENT for table `tk_ticket`
 --
 ALTER TABLE `tk_ticket`
-  MODIFY `ID_TICKET` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `ID_TICKET` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `tk_usuario`

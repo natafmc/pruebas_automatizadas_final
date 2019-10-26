@@ -20,7 +20,7 @@
 				<p>
 					<?php $categoria->DESCRIPCION; ?>
 				</p>
-				<button type="button" class="btn btn-lg btn-block btn-outline-primary imprimir" data-id="<?php echo $categoria->ID_CATEGORIA_ZONA; ?>">IMPRIMIR</button>
+				<button type="button" id="print" class="btn btn-lg btn-block btn-outline-primary imprimir" data-id="<?php echo $categoria->ID_CATEGORIA_ZONA; ?>">IMPRIMIR</button>
 			</div>
         </div>
 		<?php endforeach; ?>

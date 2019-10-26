@@ -35,8 +35,6 @@
           </li>
         </ul>
 
-          <img class="mb-2" src="<?php echo base_url(); ?>public/image/LOGO_ENDE_TECNOLOGIAS_FO.png" alt="" width="180" height="72">
-
       </div>
     </nav>
 

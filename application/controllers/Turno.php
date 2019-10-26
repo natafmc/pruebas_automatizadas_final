@@ -186,9 +186,9 @@ class Turno extends CI_Controller {
         $respuesta = array('response' => $respuesta, 'ticket' => $ticket, 'mensaje' => $mensaje);
         echo json_encode($respuesta);
     }
-    public function derivarTicket($idTicket, $idZona)
+    public function derivarTicket($idTicket, $idZona, $test = null)
     {
-        $id_usuario  = $this->session->userdata('id_usuario');;
+        $id_usuario  = $this->session->userdata('id_usuario');
         $id_estacion = 1;
         $fecha       = date("Y-m-d");
         $hora        = date("H:i:s");
@@ -210,6 +210,8 @@ class Turno extends CI_Controller {
             $respuesta = 0;
         }
         $respuesta = array('response' => $respuesta, 'ticket' => $ticket, 'mensaje' => $mensaje);
+        if($test)
+            return json_encode($respuesta);
         echo json_encode($respuesta);
     }
     public function getNextTicket($idZona, $fecha)
@@ -218,7 +220,6 @@ class Turno extends CI_Controller {
         ##############################################
         //aca la logica d como seleccioar el siguiente
         ##############################################
-        
         return $ticket;
     }
     public function countNroLlamada($idTicket, $idUsuario, $fecha)
@@ -275,8 +276,7 @@ class Turno extends CI_Controller {
         $test_name_display = "DISPLAY TEST";
         echo $this->unit->run($testDisplay, $expect_result, $test_name_display);
 
-        # TEST 3
-        #http://localhost/tomaturn/Turno/getNextTicket/1/20180914
+        # TEST 3        
         $id = 1;
         $fecha = '20180914';
         $testNextTicket = $this->getNextTicket($id, $fecha)->ID_TICKET;
@@ -285,9 +285,9 @@ class Turno extends CI_Controller {
         echo $this->unit->run($testNextTicket, $expect_result, $test_name_next);
 
         #TEST 4
-        $id = 1;
-        $fecha = '20180914';
-        $testNextTicket = $this->getNextTicket($id, $fecha)->ID_TICKET;
+        $id2 = 1;
+        $fecha2 = '20180914';
+        $testNextTicket = $this->getNextTicket($id2, $fecha2)->ID_TICKET;
         $expect_result = "9";
         $test_name_next = "GET NEXT TICKET";
         echo $this->unit->run($testNextTicket, $expect_result, $test_name_next);
@@ -295,6 +295,13 @@ class Turno extends CI_Controller {
         #TEST 5
 
         
+        $idTicket = 10;
+        $zona = 2;
+        $_SESSION['id_usuario'] = 3;
+        $testDerivarTicket = $this->derivarTicket($idTicket, $zona, true);
+        $expect_result = '{"response":1,"ticket":{"ID_TICKET":"10","ID_CATEGORIA":"2","ID_ZONA":"1","NUMERO":"1","CODIGO":"CJ-N1-1","PRIORIDAD":"1","QR":"...","ON_DISPLAY":"2","USUARIO_REG":"0","USUARIO_MOD":null,"ESTADO_REG":null,"ESTADO":"4","FECHA_MOD":"2018-09-17 16:20:37","FECHA_REG":"2018-09-17 00:00:00","HORA_IMPRESION":"22:10:25","FECHA_IMPRESION":"2018-09-17"},"mensaje":"Atendiendo el ticket CJ-N1-1"}';
+        $test_name_next = "DERIVAR TICKET";
+        echo $this->unit->run($testDerivarTicket, $expect_result, $test_name_next);
 
     }
 }

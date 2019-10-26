@@ -20,7 +20,7 @@
         		<?php echo $output; ?>
             </div>
         <?php else: ?>
-            <h1>Bienvenido: <?php echo $this->session->userdata('username'); ?></h1>
+            <h1 id="welcome">Bienvenido: <?php echo $this->session->userdata('username'); ?></h1>
         <?php endif; ?>
 
         <?php $this->load->view('commons/footer') ?>
