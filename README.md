@@ -28,7 +28,7 @@ La aplicacion es un dispenser de ticket (parecido a los ticketeros de los bancos
 5. TEST CUCUMBER
  Abrir una terminal en el directorio raiz del proyecto, posteriormente 
  $ cd cucumber-test
- Instalar dependencias
+ Instalar dependencias, si es necesario
  $ npm intall 
  Ejecutar test
  $ npm test
